@@ -3,10 +3,11 @@
     "pages/refuel/index/index",
     "pages/refuel/add/index",
     "pages/stats/index/index",
-    "pages/profile/index/index"
+    "pages/profile/index/index",
+    "pages/city/index/index"
   ],
   "window": {
-    "navigationBarTitleText": "车生活",
+    "navigationBarTitleText": "爱车加油",
     "navigationBarBackgroundColor": "#ffffff",
     "navigationBarTextStyle": "black",
     "backgroundTextStyle": "light",
@@ -14,20 +15,27 @@
   },
   "tabBar": {
     "color": "#7A7E83",
-    "selectedColor": "#007AFF",
+    "selectedColor": "#00c158",
+    "backgroundColor": "#ffffff",
     "borderStyle": "black",
     "list": [
       {
         "pagePath": "pages/refuel/index/index",
-        "text": "加油"
+        "text": "油耗",
+        "iconPath": "assets/tab/youhao.png",
+        "selectedIconPath": "assets/tab/youhao_selected.png"
       },
       {
         "pagePath": "pages/stats/index/index",
-        "text": "统计"
+        "text": "统计",
+        "iconPath": "assets/tab/youhao.png",
+        "selectedIconPath": "assets/tab/youhao_selected.png"
       },
       {
         "pagePath": "pages/profile/index/index",
-        "text": "我的"
+        "text": "我的",
+        "iconPath": "assets/tab/youhao.png",
+        "selectedIconPath": "assets/tab/youhao_selected.png"
       }
     ]
   },

@@ -1,0 +1,21 @@
+<view class="city-page">
+  <view class="search">
+    <input class="search-input" placeholder="输入城市名称搜索" bindinput="onSearch" confirm-type="search"/>
+    <view class="relo" bindtap="reLocate">重新定位</view>
+  </view>
+
+  <view class="current" wx:if="{{currentCity}}">
+    <text class="label">当前定位城市：</text>
+    <text class="val">{{currentCity}}</text>
+  </view>
+
+  <block wx:for="{{groups}}" wx:key="letter">
+    <view class="group">
+      <view class="letter">{{item.letter}}</view>
+      <block wx:for="{{item.items}}" wx:key="name">
+        <view class="row" bindtap="tapCity" data-name="{{item}}">{{item}}</view>
+      </block>
+    </view>
+  </block>
+</view>
+

@@ -1,13 +1,14 @@
 const store = require('../../../utils/storage')
 const calc = require('../../../utils/calc')
+const cityStore = require('../../../utils/city')
 
 Page({
   data: {
-    city: '北京市',
+    city: '北京',
     oilGrade: '92#',
     oilPrice: '',
     vehicleName: '默认车辆',
-    vehicleModel: '点击上面 → 去设置车型',
+    vehicleModel: '点击上方设置车辆',
 
     records: [],
     display: {
@@ -21,21 +22,22 @@ Page({
   },
 
   onShow() {
+    const savedCity = cityStore.getCity()
+    if (savedCity) this.setData({ city: savedCity })
     this.loadData()
   },
 
   loadData() {
     const list = store.getRecords()
-    // 展示友好字段（若后续需要展示列表，可保留）
     const view = list.map(it => ({
       ...it,
       liters: Number(it.liters || 0).toFixed(2),
       pricePerL: Number(it.pricePerL || 0).toFixed(2),
-      totalCost: Number(it.totalCost != null && it.totalCost !== '' ? it.totalCost : (Number(it.liters)*Number(it.pricePerL))).toFixed(2)
+      totalCost: Number(it.totalCost != null && it.totalCost !== '' ? it.totalCost : (Number(it.liters) * Number(it.pricePerL))).toFixed(2)
     }))
 
     const stats = calc.computeStats(list)
-    const latest = stats.avgLPer100km // 简化：使用整体平均作为“最新油耗”占位
+    const latest = stats.avgLPer100km // 简化：使用整体平均作为“最新油耗”的展示
     const display = {
       latestLPer100: Number(latest).toFixed(2),
       avgLPer100km: Number(stats.avgLPer100km).toFixed(2),
@@ -54,5 +56,10 @@ Page({
 
   goStats() {
     wx.switchTab({ url: '/pages/stats/index/index' })
+  },
+
+  chooseCity() {
+    wx.navigateTo({ url: '/pages/city/index/index' })
   }
 })
+
