@@ -73,7 +73,7 @@
     <!-- 空数据占位卡片 -->
     <view class="card empty" wx:if="{{records.length === 0}}">
       <view class="empty-illu">📝</view>
-      <view class="muted" style="text-align:center">没有加油或者充电记录。</view>
+      <view class="muted" style="text-align:center">没有加油或者充电记录.</view>
     </view>
 
     <view class="space-lg"></view>
