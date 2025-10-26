@@ -1,0 +1,51 @@
+<view class="container">
+  <view class="card">
+    <view class="form-item row">
+      <view class="form-label">日期</view>
+      <picker mode="date" value="{{form.date}}" bindchange="onDateChange" class="form-value">
+        <view>{{form.date || '请选择日期'}}</view>
+      </picker>
+    </view>
+
+    <view class="form-item row">
+      <view class="form-label">里程(km)</view>
+      <input class="form-value" type="digit" placeholder="当前里程" value="{{form.odometer}}" bindinput="onInput" data-field="odometer"/>
+    </view>
+
+    <view class="form-item row">
+      <view class="form-label">加油量(L)</view>
+      <input class="form-value" type="digit" placeholder="本次加油升数" value="{{form.liters}}" bindinput="onInput" data-field="liters"/>
+    </view>
+
+    <view class="form-item row">
+      <view class="form-label">单价(¥/L)</view>
+      <input class="form-value" type="digit" placeholder="油价" value="{{form.pricePerL}}" bindinput="onInput" data-field="pricePerL"/>
+    </view>
+
+    <view class="form-item row">
+      <view class="form-label">总价(¥)</view>
+      <input class="form-value" type="digit" placeholder="总金额(可留空自动计算)" value="{{form.totalCost}}" bindinput="onInput" data-field="totalCost"/>
+    </view>
+
+    <view class="form-item row">
+      <view class="form-label">是否加满</view>
+      <switch checked="{{form.fullTank}}" bindchange="onFullTankChange"/>
+    </view>
+
+    <view class="form-item row">
+      <view class="form-label">油站</view>
+      <input class="form-value" placeholder="可选" value="{{form.station}}" bindinput="onInput" data-field="station"/>
+    </view>
+
+    <view class="form-item">
+      <view class="muted" style="margin-bottom: 8rpx;">备注</view>
+      <textarea placeholder="可选" auto-height value="{{form.note}}" bindinput="onInput" data-field="note"/>
+    </view>
+  </view>
+
+  <view class="space-lg"></view>
+  <view class="btn" bindtap="onSubmit">保存</view>
+  <view class="space"></view>
+  <view class="btn btn-secondary" bindtap="onCancel">取消</view>
+</view>
+

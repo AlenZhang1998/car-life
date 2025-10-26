@@ -1,0 +1,71 @@
+page {
+  background: #f5f6f8;
+  color: #222;
+  font-size: 28rpx;
+}
+
+.container {
+  padding: 24rpx;
+}
+
+.card {
+  background: #fff;
+  border-radius: 16rpx;
+  box-shadow: 0 6rpx 16rpx rgba(0,0,0,0.04);
+  padding: 24rpx;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.muted {
+  color: #888;
+}
+
+.primary {
+  color: #007aff;
+}
+
+.btn {
+  height: 88rpx;
+  line-height: 88rpx;
+  background: #007aff;
+  color: #fff;
+  border-radius: 12rpx;
+  text-align: center;
+}
+
+.btn-secondary {
+  background: #f0f0f0;
+  color: #333;
+}
+
+.space-sm { height: 16rpx; }
+.space { height: 24rpx; }
+.space-lg { height: 40rpx; }
+
+form .weui-input, input, picker, textarea {
+  font-size: 28rpx;
+}
+
+.form-item {
+  padding: 20rpx 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.form-label {
+  width: 220rpx;
+  color: #666;
+}
+
+.form-value {
+  flex: 1;
+  text-align: right;
+}
+
+.danger { color: #ff3b30; }
+.success { color: #34c759; }
+

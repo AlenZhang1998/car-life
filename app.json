@@ -1,0 +1,36 @@
+{
+  "pages": [
+    "pages/refuel/index/index",
+    "pages/refuel/add/index",
+    "pages/stats/index/index",
+    "pages/profile/index/index"
+  ],
+  "window": {
+    "navigationBarTitleText": "车生活",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black",
+    "backgroundTextStyle": "light",
+    "backgroundColor": "#f5f5f5"
+  },
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#007AFF",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/refuel/index/index",
+        "text": "加油"
+      },
+      {
+        "pagePath": "pages/stats/index/index",
+        "text": "统计"
+      },
+      {
+        "pagePath": "pages/profile/index/index",
+        "text": "我的"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}
+

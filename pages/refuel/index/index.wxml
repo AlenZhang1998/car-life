@@ -1,0 +1,82 @@
+<view class="home">
+  <!-- 顶部渐变与城市/车辆信息 -->
+  <view class="hero">
+    <view class="row hero-row">
+      <view class="city">{{city}}</view>
+      <view class="oil-price" wx:if="{{oilPrice}}">{{oilGrade}} {{oilPrice}} 元/升</view>
+    </view>
+    <view class="vehicle">
+      <text class="name">{{vehicleName}}</text>
+      <text class="sub">{{vehicleModel}}</text>
+    </view>
+  </view>
+
+  <!-- 无数据提示条 -->
+  <view class="banner-warn" wx:if="{{records.length === 0}}">没有加油或者充电记录。</view>
+
+  <!-- 最新油耗卡片 -->
+  <view class="container">
+    <view class="card latest">
+      <view class="row">
+        <view class="card-title">最新油耗</view>
+        <view class="link" bindtap="goStats">能耗评级 ></view>
+      </view>
+      <view class="value-lg">{{display.latestLPer100}}</view>
+      <view class="muted">升/百公里</view>
+    </view>
+
+    <view class="space"></view>
+
+    <!-- 统计卡片 -->
+    <view class="card">
+      <view class="row">
+        <view class="card-title">统计</view>
+        <view class="link" bindtap="goStats">全部 ></view>
+      </view>
+      <view class="grid grid-3">
+        <view class="stat-item">
+          <view class="stat-value green">{{display.avgLPer100km}}</view>
+          <view class="stat-label">平均油耗</view>
+          <view class="stat-sub">升/百公里</view>
+        </view>
+        <view class="stat-item">
+          <view class="stat-value">{{display.avgKmPerDay}}</view>
+          <view class="stat-label">平均行程</view>
+          <view class="stat-sub">公里/天</view>
+        </view>
+        <view class="stat-item">
+          <view class="stat-value green">{{display.costPerKm}}</view>
+          <view class="stat-label">平均油费</view>
+          <view class="stat-sub">元/公里</view>
+        </view>
+
+        <view class="stat-item">
+          <view class="stat-value">{{display.totalDistance}}</view>
+          <view class="stat-label">累计行程</view>
+          <view class="stat-sub">公里</view>
+        </view>
+        <view class="stat-item">
+          <view class="stat-value">{{display.totalCost}}</view>
+          <view class="stat-label">累计油费</view>
+          <view class="stat-sub">元</view>
+        </view>
+        <view class="stat-item">
+          <view class="stat-value">0</view>
+          <view class="stat-label">总计优惠</view>
+          <view class="stat-sub">元</view>
+        </view>
+      </view>
+    </view>
+
+    <view class="space"></view>
+
+    <!-- 空数据占位卡片 -->
+    <view class="card empty" wx:if="{{records.length === 0}}">
+      <view class="empty-illu">📝</view>
+      <view class="muted" style="text-align:center">没有加油或者充电记录。</view>
+    </view>
+
+    <view class="space-lg"></view>
+    <view class="btn" bindtap="goAdd">新增加油</view>
+  </view>
+</view>

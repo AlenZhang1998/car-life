@@ -1,0 +1,4 @@
+.danger {
+  color: #ff3b30;
+}
+

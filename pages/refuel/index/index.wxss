@@ -1,0 +1,43 @@
+.home { min-height: 100vh; }
+
+.hero {
+  background: linear-gradient(180deg, #5bb6ff 0%, #6fd1ff 100%);
+  padding: 28rpx 24rpx 40rpx 24rpx;
+  color: #fff;
+}
+.hero-row { justify-content: space-between; }
+.city { font-size: 28rpx; }
+.oil-price {
+  background: rgba(255,255,255,0.25);
+  padding: 6rpx 12rpx;
+  border-radius: 10rpx;
+  font-size: 24rpx;
+}
+.vehicle .name { display:block; font-size: 32rpx; font-weight: 600; }
+.vehicle .sub { display:block; opacity: .9; margin-top: 6rpx; }
+
+.banner-warn {
+  margin: -24rpx 16rpx 0 16rpx;
+  transform: translateY(-18rpx);
+  background: #ffeaa7;
+  color: #333;
+  padding: 18rpx 20rpx;
+  border-radius: 12rpx;
+}
+
+.container { padding: 0 24rpx; }
+.card-title { font-weight: 600; }
+.link { color: #888; }
+.latest { text-align: left; }
+.value-lg { font-size: 64rpx; font-weight: 700; margin-top: 8rpx; }
+
+.grid { display: grid; gap: 12rpx 0; }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+.stat-item { text-align: center; padding: 12rpx 0; }
+.stat-value { font-size: 34rpx; font-weight: 700; }
+.stat-label { color: #222; margin-top: 6rpx; }
+.stat-sub { color: #999; font-size: 24rpx; }
+.green { color: #12c27f; }
+
+.empty { align-items: center; }
+.empty-illu { font-size: 68rpx; text-align:center; margin: 12rpx 0; }

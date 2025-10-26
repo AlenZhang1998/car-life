@@ -1,0 +1,59 @@
+<view class="container">
+  <view class="card">
+    <view class="row">
+      <view>记录数</view>
+      <view class="primary">{{stats.totalRecords}}</view>
+    </view>
+    <view class="space-sm"></view>
+    <view class="row">
+      <view>总里程</view>
+      <view class="primary">{{stats.totalDistance}} km</view>
+    </view>
+    <view class="space-sm"></view>
+    <view class="row">
+      <view>总加油量</view>
+      <view class="primary">{{stats.totalLiters}} L</view>
+    </view>
+    <view class="space-sm"></view>
+    <view class="row">
+      <view>总花费</view>
+      <view class="primary">¥ {{stats.totalCost}}</view>
+    </view>
+  </view>
+
+  <view class="space"></view>
+
+  <view class="card">
+    <view class="row">
+      <view>平均油耗</view>
+      <view class="primary">{{stats.avgLPer100km}} L/100km</view>
+    </view>
+    <view class="space-sm"></view>
+    <view class="row">
+      <view>百公里花费</view>
+      <view class="primary">¥ {{stats.costPer100km}}</view>
+    </view>
+    <view class="space-sm"></view>
+    <view class="row">
+      <view>平均单价</view>
+      <view class="primary">¥ {{stats.avgPricePerL}}/L</view>
+    </view>
+  </view>
+
+  <view class="space"></view>
+
+  <view class="card">
+    <view class="muted" wx:if="{{stats.monthly.length === 0}}">暂无月度数据</view>
+    <block wx:for="{{stats.monthly}}" wx:key="month">
+      <view class="row" style="padding: 16rpx 0;">
+        <view>{{item.month}}</view>
+        <view style="text-align:right">
+          <view>{{item.liters.toFixed(2)}} L</view>
+          <view class="muted">¥ {{item.cost.toFixed(2)}} • {{item.count}} 次</view>
+        </view>
+      </view>
+      <view style="height: 1px; background:#f0f0f0;" wx:if="{{index < stats.monthly.length - 1}}"></view>
+    </block>
+  </view>
+</view>
+
