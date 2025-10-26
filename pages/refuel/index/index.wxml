@@ -2,7 +2,10 @@
   <!-- 顶部渐变与城市/车辆信息 -->
   <view class="hero">
     <view class="row hero-row">
-      <view class="city" bindtap="chooseCity">{{city}}</view>
+      <view class="city" bindtap="chooseCity">
+        <image class="city-ic" src="/assets/icons/city.svg" mode="widthFix"></image>
+        <text>{{city}}</text>
+      </view>
       <view class="oil-price" wx:if="{{oilPrice}}">{{oilGrade}} {{oilPrice}} 元/升</view>
     </view>
     <view class="vehicle">

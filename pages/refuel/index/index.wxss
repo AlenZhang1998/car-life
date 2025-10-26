@@ -7,6 +7,8 @@
 }
 .hero-row { justify-content: space-between; }
 .city { font-size: 28rpx; }
+.city { display:flex; align-items:center; gap: 8rpx; }
+.city-ic { width: 30rpx; height: 30rpx; display:block; }
 .oil-price {
   background: rgba(255,255,255,0.25);
   padding: 6rpx 12rpx;
