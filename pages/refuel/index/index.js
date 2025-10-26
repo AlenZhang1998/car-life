@@ -23,7 +23,8 @@ Page({
 
   onShow() {
     const savedCity = cityStore.getCity()
-    if (savedCity) this.setData({ city: savedCity })
+    const displayCity = cityStore.formatCityForDisplay(savedCity || '北京', { keepSuffix: false })
+    this.setData({ city: displayCity || '北京' })
     this.loadData()
   },
 
@@ -62,4 +63,3 @@ Page({
     wx.navigateTo({ url: '/pages/city/index/index' })
   }
 })
-

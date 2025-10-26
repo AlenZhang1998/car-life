@@ -39,6 +39,15 @@
       }
     ]
   },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "用于定位并选择城市"
+    }
+  },
+  "requiredPrivateInfos": [
+    "getLocation",
+    "chooseLocation",
+    "startLocationUpdate"
+  ],
   "sitemapLocation": "sitemap.json"
 }
-
